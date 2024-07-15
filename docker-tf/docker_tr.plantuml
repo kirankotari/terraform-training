@@ -1,0 +1,7 @@
+digraph G {
+  rankdir = "RL";
+  node [shape = rect, fontname = "sans-serif"];
+  "docker_container.nginx" [label="docker_container.nginx"];
+  "docker_image.nginx" [label="docker_image.nginx"];
+  "docker_container.nginx" -> "docker_image.nginx";
+}
