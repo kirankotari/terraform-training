@@ -1,0 +1,874 @@
+    1  exit
+    2  ls
+    3  touch zork.test 
+    4  ls
+    5  vim zork.test 
+    6  cat zork.test 
+    7  vim zork.test 
+    8  cat zork.test 
+    9  live gtg
+   10  live afk
+   11  live working
+   12  sudo apt-get update && sudo apt-get install -y gnupg software-properties-common curl
+   13  curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add -
+   14  sudo apt-add-repository "deb [arch=amd64] https://apt.releases.hashicorp.com $(lsb_release -cs) main"
+   15  sudo apt-get update && sudo apt-get install terraform
+   16  terraform -help
+   17  terraform -help init
+   18  live gtg
+   19  mkdir -p mycode/docker-tf/
+   20  cd mycode/docker-tf/
+   21  touch main.tf
+   22  vim main.tf 
+   23  terraform init
+   24  docker ps 
+   25  docker plan 
+   26  terraform plan 
+   27  terraform apply 
+   28  docker image ls 
+   29  docker ps
+   30  curl localhost:8000
+   31  terraform destroy 
+   32  docker ps 
+   33  docker images ls 
+   34  docker image ls
+   35  ls
+   36  terraform validate 
+   37  terraform fmt 
+   38  vim main.tf 
+   39  ls
+   40  vim terraform.tfstate
+   41  vim terraform.tfstate.backup 
+   42  ls
+   43  cp main.tf main.tf.old
+   44  vi main.tf
+   45  terraform plan 
+   46  terraform apply 
+   47  docker ps 
+   48  ls
+   49  vim terraform.tfstate
+   50  vim terraform.tfstate.backup 
+   51  vim main.tf.old 
+   52  vim main.tf
+   53  terraform plan 
+   54  terraform apply 
+   55  docker ps 
+   56  ls
+   57  vim terraform.tfstate
+   58  vim terraform.tfstate.backup 
+   59  terraform apply
+   60  terraform -h 
+   61  terraform graph 
+   62  terraform graph >> docker_tr.plantuml
+   63  cat docker_tr.plantuml 
+   64  ls
+   65  terraform state 
+   66  terraform show 
+   67  terraform list
+   68  terraform show list
+   69  terraform state list 
+   70  terraform state show 
+   71  terraform state show localhost
+   72  terraform state show 127.0.0.1
+   73  terraform state list 
+   74  terraform state show docker_image.nginx 
+   75  terraform state show docker_container.nginx
+   76  docker ps 
+   77  docker image ls
+   78  terraform destroy
+   79  ls
+   80  cat terraform.tfstate
+   81  cat terraform.tfstate.backup 
+   82  q!
+   83  ls
+   84  terraform state list 
+   85  ls
+   86  cd ..
+   87  mkdir variables-tf
+   88  cd variables-tf/
+   89  vim main.tf 
+   90  terraform validate
+   91  terraform init
+   92  terraform validate
+   93  terraform plan
+   94  terraform plan -var "nginx_label=terraform2"
+   95  vi main.tf 
+   96  terraform plan -var "container_name=terraform2"
+   97  vi main.tf 
+   98  terraform plan 
+   99  vi main.tf 
+  100  terraform plan 
+  101  vi main.tf 
+  102  terraform plan 
+  103  terraform apply 
+  104  docker ps 
+  105  live gtg
+  106  vi main.tf 
+  107  terraform validate 
+  108  terraform apply -var "external_port=8900" -var "internal_port=80" -var "container_name=nginx_demo"
+  109  docker ps 
+  110  terraform destroy 
+  111  live gtg
+  112  cd ..
+  113  ls
+  114  df -h 
+  115  mkdir locals-tf
+  116  cd locals-tf/
+  117  cp ../variables-tf/main.tf .
+  118  terraform init
+  119  vi main.tf 
+  120  terraform validate 
+  121  live gtg
+  122  cd ..
+  123  mkdir values-tf
+  124  cd values-tf/
+  125  cp ../locals-tf/main.tf . 
+  126  cp main.tf variables.tf
+  127  vi main.tf 
+  128  vi variables.tf 
+  129  terraform init
+  130  terraform validate
+  131  vi outputs.tf
+  132  terraform plan 
+  133  terraform apply
+  134  docker ps 
+  135  docker image ls 
+  136  ls
+  137  cat outputs.tf 
+  138  terraform output 3564a6aea5d38d0fb1223356a89b9e56126434ca103128a0027a92a4fc5bb962
+  139  terraform output -json 
+  140  terraform output image_id
+  141  terraform providers
+  142  terraform destroy -auto-approve
+  143  cd ..
+  144  ls
+  145  cd variables-tf/
+  146  vi main.tf 
+  147  cd ..
+  148  cd values-tf/
+  149  ls
+  150  cat outputs.tf 
+  151  docker ps 
+  152  cd ..
+  153  mv values-tf output-tf
+  154  cd output-tf/
+  155  terraform plan 
+  156  vi main.tf 
+  157  vi variables.tf 
+  158  terraform apply 
+  159  terraform destroy 
+  160  vi variables.tf 
+  161  terraform apply
+  162  live gtg
+  163  cd ..
+  164  mkdir expressions
+  165  cd expressions/
+  166  cp ../variables-tf/main.tf . 
+  167  vi main.tf 
+  168  cd ..
+  169  ls
+  170  cd output-tf/
+  171  vi outputs.tf 
+  172  vi variables.tf 
+  173  terraform apply 
+  174  vi variables.tf 
+  175  terraform apply
+  176  terraform init
+  177  terraform apply
+  178  vi main.tf 
+  179  vi variables.tf 
+  180  terraform apply
+  181  terraform destroy 
+  182  vi main.tf 
+  183  terraform apply
+  184  vi main.tf 
+  185  terraform apply
+  186  vi main.tf 
+  187  vi variables.tf 
+  188  terraform apply
+  189  vi outputs.tf 
+  190  vi variables.tf 
+  191  terraform apply
+  192  docker ps 
+  193  terraform destroy 
+  194  terraform apply 
+  195  docker ps 
+  196  terraform destroy 
+  197  docker ps 
+  198  docker ps -a
+  199  terraform apply 
+  200  docker ps 
+  201  vi variables.tf cls
+  202  ls
+  203  vim main.tf 
+  204  vim variables.tf 
+  205  terraform apply 
+  206  docker ps 
+  207  terraform destroy 
+  208  cd ..
+  209  cd expressions/
+  210  ls
+  211  vi main.tf 
+  212  vi outputs.tf
+  213  vi versions.tf 
+  214  vi main.tf 
+  215  terraform init
+  216  terraform apply 
+  217  docker ps 
+  218  curl $(terraform output -json nginx_hosts | jq -r '.[0].host')
+  219  mv main.tf main.old
+  220  touch main.tf
+  221  curl $(terraform output -json nginx_hosts | jq -r '.[1].host')
+  222  curl $(terraform output -json nginx_hosts | jq -r '.[2].host')
+  223  curl $(terraform output -json nginx_hosts | jq -r '.[3].host')
+  224  vi main.tf 
+  225  terraform destroy
+  226  ls
+  227  docker imaage rm redis
+  228  docker rm image redis
+  229  sudo docker image rm redis:7.0.11
+  230  exit
+  231  watch -n 5 docker image ls
+  232  exit
+  233  cd mycode/
+  234  ls
+  235  cd expressions/
+  236  ls
+  237  terraform init
+  238  terraform apply
+  239  terraform show 
+  240  terraform apply 
+  241  terraform state list
+  242  terraform apply -replace "docker_container.nginx[2]"
+  243  docker ps
+  244  terraform destroy 
+  245  docker ps 
+  246  live gtg
+  247  gimme 
+  248  cd ..
+  249  mkdir tfvars-tf
+  250  cd tfvars-tf/
+  251  vim main.tf
+  252  vim variables.tf
+  253  mkdir -p ~/mycode/tfvars-tf/aux1
+  254  ls
+  255  vim aux1/terraform.tfvars
+  256  mkdir -p ~/mycode/tfvars-tf/aux2
+  257  vim aux2/terraform.tfvars
+  258  tree
+  259  terraform init
+  260  docker ps
+  261  terraform apply -var-file="aux2/terraform.tfvars"
+  262  docker ps
+  263  terraform apply -var "external_port=5666"
+  264  docker ps 
+  265  mkdir -p aux3/doctor.who
+  266  cd aux
+  267  cd aux3
+  268  ls
+  269  rm -rf doctor.who/
+  270  vim doctor.who
+  271  terraform apply -var-file="aux3/doctor.who"
+  272  cd ..
+  273  terraform apply -var-file="aux3/doctor.who"
+  274  terraform destroy --auto-approve
+  275  docker ps
+  276  vim ~/mycode/.gitignore
+  277  ls
+  278  cd ..
+  279  ls
+  280  cd ..
+  281  ls
+  282  cd mycode/
+  283  ls
+  284  cd ..
+  285  cd px/
+  286  ls
+  287  tree . 
+  288  cd ..
+  289  ls
+  290  cd git/
+  291  ls
+  292  cd devops-the-alta3-way/
+  293  ls
+  294  cd ..
+  295  ls
+  296  cd kubernetes-the-alta3-way/
+  297  ls
+  298  cd ..
+  299  cd mycode/
+  300  lls
+  301  ls
+  302  cd tfvars-tf/
+  303  ls
+  304  live gtg
+  305  history 
+  306  cd ..
+  307  ls
+  308  git init
+  309  git branch
+  310  git add README.md
+  311  git commit -m "first commit"
+  312  git config --global user.email "kirankotari@live.com"
+  313  git config --global user.name "Kiran Kotari"
+  314  git branch -M main
+  315  git remote add origin https://github.com/kirankotari/terraform-training.git
+  316  git push -u origin main
+  317  ls
+  318  ll
+  319  cat .gitconfig 
+  320  cd .git/
+  321  ls
+  322  cd ..
+  323  git branch
+  324  git status
+  325  git add .
+  326  git status
+  327  git commit -m "Terraform training"
+  328  git rm .local 
+  329  git rm -r .local 
+  330  git status
+  331  rm -rf .git 
+  332  ls
+  333  ll
+  334  cd mycode/
+  335  git clone https://github.com/kirankotari/terraform-training.git
+  336  ls
+  337  ll
+  338  cp -r ~/mycode mycode-backup
+  339  mkdir mycode-backup
+  340  ls
+  341  mv mycode-backup/
+  342  mv mycode-backup ..
+  343  ls
+  344  cd ..
+  345  ls
+  346  tree mycode-backup/
+  347  cd mycode-backup/
+  348  ls
+  349  tree . 
+  350  ll
+  351  rm -rf terraform-training/
+  352  ls
+  353  cd ..
+  354  ls
+  355  cd mycode
+  356  ls
+  357  cd terraform-training/
+  358  ll
+  359  cd ..
+  360  cp -r docker-tf expressions locals-tf output-tf tfvars-tf variables-tf terraform-training/*
+  361  cp -r docker-tf expressions locals-tf output-tf tfvars-tf variables-tf terraform-training/
+  362  ls
+  363  cd terraform-training/
+  364  ls
+  365  tree . 
+  366  git push
+  367  cd ..
+  368  git status
+  369  cd terraform-training/
+  370  ls
+  371  git status
+  372  git add . 
+  373  git commit -m "terraform day1" 
+  374  git status
+  375  git push 
+  376  # hmmm
+  377  # one sec
+  378  cd
+  379  ls
+  380  cd mycode/terraform-training/
+  381  git status
+  382  ls
+  383  cd
+  384  cd mycode
+  385  ls
+  386  cd
+  387  ls mycode-backup/
+  388  rm mycode-backup/
+  389  rm -rf mycode-backup/
+  390  mv mycode/ mycode-old
+  391  git clone https://github.com/kirankotari/terraform-training.git ~/mycode
+  392  cp -r mycode-old/* mycode/
+  393  cd mycode
+  394  ls
+  395  git status
+  396  git add *
+  397  rm -rf terraform-training/
+  398  git add *
+  399  git commit -m "ok"
+  400  git push
+  401  cd ..
+  402  ls
+  403  cd mycode-old/
+  404  ls
+  405  rm -rf terraform-training/
+  406  cd ..
+  407  cd mycode
+  408  ls
+  409  git status
+  410  cd ..
+  411  ll
+  412  cd mycode-old/
+  413  ls
+  414  git status
+  415  cd ..
+  416  cd mycode
+  417  git statu
+  418  git status
+  419  git add . 
+  420  git commit -m "ok"
+  421  git push
+  422  cd ..
+  423  ls
+  424  cd px
+  425  ls
+  426  tree . 
+  427  cd dockerfiles/2204/base/
+  428  ls
+  429  cat Dockerfile 
+  430  cat ../staff/Dockerfile 
+  431  cd ../..
+  432  cd ..
+  433  tree . 
+  434  cd scripts/
+  435  ls
+  436  cat commands.txt 
+  437  ls
+  438  ll
+  439  cat px-access.yml 
+  440  cd ..
+  441  tree . 
+  442  cd ..
+  443  tar -cvf px.tar.gz px
+  444  px
+  445  ls
+  446  mv px.tar.gz static/
+  447  ls
+  448  cd git/
+  449  ls
+  450  cd kubernetes-the-alta3-way/
+  451  ls
+  452  cd ..
+  453  cd static
+  454  ls
+  455  rm -rf px.tar.gz 
+  456  cd ..
+  457  cd mycode
+  458  ls
+  459  docker rm -vf $(docker ps -aq) && docker rmi -f $(docker images -aq)
+  460  mkdir -p ~/mycode/troubleshoot && cd ~/mycode/troubleshoot
+  461  wget https://raw.githubusercontent.com/csfeeser/terraform/main/scripts/main ~/mycode/troubleshoot/main -q
+  462  ls
+  463  terraform init
+  464  vi main 
+  465  mv main main.tf
+  466  terraform init 
+  467  terraform validate
+  468  vim main.tf 
+  469  terraform validate
+  470  vim main.tf 
+  471  terraform validate
+  472  terraform init
+  473  terraform validate
+  474  vi main.tf 
+  475  terraform validate
+  476  vi main.tf 
+  477  terraform validate
+  478  vi main.tf 
+  479  terraform validate
+  480  vi main.tf 
+  481  terraform validate
+  482  vi main.tf 
+  483  terraform apply 
+  484  vi main.tf 
+  485  terraform validate
+  486  terraform apply 
+  487  curl localhost:8089
+  488  vim main.tf 
+  489  live gtg
+  490  cd
+  491  exit
+  492  live gtg
+  493  which live
+  494  cd .local/
+  495  ls
+  496  # looks like the whole bin file here in your machine got wiped out somehow, how strange
+  497  cd
+  498  # well no worries-- you can always just message me when you're good to go!
+  499  # okay chad
+  500  cd mycode/troubleshoot/
+  501  vi main.tf 
+  502  terraform apply 
+  503  history >> ../day1_history.log 
+  504  cd ..
+  505  cd troubleshoot/
+  506  tree . 
+  507  terraform -chdir=mycode/MODULEDIRECTORY state list
+  508  terraform --chdir=mycode/MODULEDIRECTORY state list
+  509  cd ..
+  510  terraform --chdir=mycode/troubleshoot state list
+  511  terraform -chdir=mycode/troubleshoot state list
+  512  cd mycode/troubleshoot/
+  513  terraform state list 
+  514  cd ..
+  515  mkdir -p ~/mycode/myworkspace/
+  516  cd myworkspace/
+  517  terraform workspace --help
+  518  terraform workspace list
+  519  terraform workspace new alta3_workspace
+  520  terraform workspace list
+  521  terraform workspace show
+  522  terraform workspace select default
+  523  terraform workspace show
+  524  terraform workspace delete alta3_workspace
+  525  vim main.tf
+  526  vim variables.tf
+  527  terraform init
+  528  terraform plan -var "container_name=SNES" -var "external_port=11991"
+  529  terraform apply -var "container_name=SNES" -var "external_port=11991" -auto-approve
+  530  terraform workspace list
+  531  terraform workspace new test_space
+  532  terraform show
+  533  docker ps 
+  534  terraform plan -var "container_name=SNES" -var "external_port=11991"
+  535  tree . 
+  536  terraform workspace delete test_space
+  537  terraform workspace select default 
+  538  terraform workspace delete test_space
+  539  docker ps
+  540  terraform workspace new test_space
+  541  terraform apply -var "container_name=test" -var "external_port=11992" -auto-approve
+  542  docker ps 
+  543  cd ..
+  544  cd troubleshoot/
+  545  terraform destroy 
+  546  cd ../myworkspace/
+  547  docker ps 
+  548  terraform workspace show 
+  549  terraform destroy 
+  550  terraform workspace select default 
+  551  terraform workspace list 
+  552  terraform workspace delete test_space 
+  553  terraform workspace list 
+  554  terraform destroy 
+  555  tree . 
+  556  terraform workspace list 
+  557  terraform workspace new one
+  558  terraform workspace new two
+  559  terraform workspace new three
+  560  vim main.tf 
+  561  vim variables.tf
+  562  terraform workspace list 
+  563  terraform workspace select one
+  564  terraform apply
+  565  tree . 
+  566  terraform workspace select two
+  567  terraform apply -auto-approve
+  568  docker ps 
+  569  tree . 
+  570  terraform workspace selecte two 
+  571  terraform workspace select two 
+  572  terraform workspace list 
+  573  terraform apply -auto-approve
+  574  tree . 
+  575  terraform workspace select three 
+  576  terraform apply -auto-approve
+  577  docker ps 
+  578  tree . 
+  579  terraform workspace select default 
+  580  terraform destory 
+  581  terraform destroy 
+  582  tree . 
+  583  terraform workspace select one
+  584  terraform destory -auto-approve
+  585  terraform destroy -auto-approve
+  586  terraform workspace select two
+  587  docker ps 
+  588  terraform destroy -auto-approve
+  589  docker ps 
+  590  terraform workspace select three
+  591  terraform destroy -auto-approve
+  592  docker ps 
+  593  docker ps -a
+  594  docker image ls
+  595  tree . 
+  596  terraform workspace list
+  597  cd ..
+  598  mkdir -p ~/mycode/brokenresources/
+  599  cd brokenresources/
+  600  mkdir -p ~/mycode/brokenresources/
+  601  vim ~/mycode/brokenresources/main.tf
+  602  terraform init
+  603  terraform apply -auto-approve 
+  604  docker ps 
+  605  terraform state list 
+  606  terraform taint docker_container.nginx[0]
+  607  vim terraform.tfstate
+  608  terraform apply -auto-approve 
+  609  docker ps 
+  610  vim terraform.tfstate
+  611  docker ps 
+  612  terraform state list
+  613  terraform apply -replace="docker_container.nginx[1]" -auto-approve
+  614  docker ps
+  615  terraform apply -replace="docker_container.nginx[2]" -auto-approve-replace="docker_container.nginx[3]"
+  616  terraform apply -replace="docker_container.nginx[2]" -auto-approve -replace="docker_container.nginx[3]"
+  617  docker ps 
+  618  terraform state list
+  619  terraform taint docker_container.nginx[0]
+  620  cat terraform.tfstate | grep taint 
+  621  terraform untaint docker_container.nginx[0]
+  622  cat terraform.tfstate | grep taint 
+  623  terraform apply -auto-approve 
+  624  cd ..
+  625  mkdir manyresources
+  626  cd manyresources/
+  627  ls
+  628  touch main.tf
+  629  terraform console 
+  630  cd ..
+  631  mkdir locals-tf/
+  632  cd locals-tf/
+  633  ls
+  634  vi main.tf 
+  635  terraform show 
+  636  vi main.tf 
+  637  terraform show 
+  638  terraform apply 
+  639  vi main.tf 
+  640  terraform apply 
+  641  vi main.tf 
+  642  cd ..
+  643  mkdir loops-tf
+  644  cd loops-tf/
+  645  touch main.tf
+  646  vim main.tf 
+  647  terraform apply 
+  648  terraform init
+  649  terraform apply 
+  650  vim main.tf 
+  651  terraform apply 
+  652  vim main.tf 
+  653  terraform apply 
+  654  vim main.tf 
+  655  terraform apply 
+  656  cd ..
+  657  mkdir null-loops
+  658  cd null-loops/
+  659  touch main.tf
+  660  vim main.tf 
+  661  terraform init
+  662  terraform fmt
+  663  terraform validate
+  664  terraform apply 
+  665  mv main.tf main.old
+  666  vim main.tf 
+  667  terraform init
+  668  terraform apply 
+  669  tree . 
+  670  terraform destroy
+  671  terraform destroy -auto-approve
+  672  cd ..\
+  673  cd ..
+  674  mkdir docker-loops
+  675  cd docker-loops/
+  676  cd ..
+  677  tree . 
+  678  cp troubleshoot/main.tf docker-loops/
+  679  cd docker-loops/
+  680  vim main.tf 
+  681  terraform validate
+  682  terraform init
+  683  terraform validate
+  684  terraform apply 
+  685  docker ps 
+  686  terraform state list 
+  687  terraform taint 'docker_container.nginx["three"]'
+  688  terraform apply 
+  689  docker ps 
+  690  terraform state list 
+  691  terraform apply -replace='docker_container.nginx["two"]'
+  692  docker p s
+  693  docker ps
+  694  terraform destroy 
+  695  ls
+  696  docker ps 
+  697  cd ..
+  698  grep -Ril 'nginx-super-bengal-3'
+  699  cd brokenresources/
+  700  terraform workspace list
+  701  terraform state list 
+  702  terraform destroy 
+  703  docker ps 
+  704  docker ps -a
+  705  cd ..
+  706  ls
+  707  git status
+  708  git add . 
+  709  git commit -m "day2" 
+  710  git push 
+  711  live gtg
+  712  mkdir maps-tf
+  713  cd maps-tf/
+  714  vim main.tf
+  715  terraform init
+  716  terraform apply 
+  717  vi main.tf 
+  718  terraform validate 
+  719  terraform init
+  720  terraform validate 
+  721  vim main.tf 
+  722  terraform validate 
+  723  terraform apply -auto-approve 
+  724  docker ps
+  725  terraform destroy 
+  726  live gtg
+  727  cd ..
+  728  mkdir maps2_tf
+  729  cd maps2_tf/
+  730  vim main.tf
+  731  terraform init 
+  732  terraform apply 
+  733  vim main.tf
+  734  cd ..
+  735  mkdir maps3_tf
+  736  cd maps3_tf/
+  737  vim main.tf 
+  738  terraform init
+  739  terraform validate
+  740  terraform apply 
+  741  vi main.tf 
+  742  terraform validate
+  743  terraform apply
+  744  vi main.tf 
+  745  terraform apply
+  746  terraform destroy 
+  747  terraform apply
+  748  terraform destroy 
+  749  cd ..
+  750  mkdir regions-tf
+  751  vi regions-tf/
+  752  cd regions-tf/
+  753  vim main.tf 
+  754  cd 
+  755  cd mycode
+  756  mkdir -p ~/mycode/project-tf/my_modules/container_maker/
+  757  cd project-tf/
+  758  tree . 
+  759  wq!
+  760  cd my_modules/container_maker/
+  761  vim main.tf 
+  762  vim variables.tf 
+  763  vim outputs.tf 
+  764  cd ../..
+  765  ls
+  766  vim main.tf 
+  767  vim variables.tf 
+  768  vim outputs.tf 
+  769  terraform init
+  770  terraform plan 
+  771  terraform apply -auto-apply 
+  772  terraform apply -auto-approve
+  773  curl 172.17.0.1:2224
+  774  terraform apply -var "container_name_from_root=MorphinTime"
+  775  curl 172.17.0.1:2224
+  776  terraform destroy -auto-approve
+  777  live gtg
+  778  cd ..
+  779  mkdir demo3
+  780  cd demo3/
+  781  cp ../docker-tf/main.tf . 
+  782  ls
+  783  vim main.tf 
+  784  terraform init
+  785  terraform apply 
+  786  vi main.tf 
+  787  terraform apply
+  788  terraform apply 
+  789  cd ..\
+  790  cd ..
+  791  mkdir state-move
+  792  cd state-move/
+  793  git clone https://github.com/rzfeeser/basic_terraform_module .
+  794  terraform init
+  795  terraform apply -auto-approve
+  796  terraform state list 
+  797  vim main.tf 
+  798  mv main.tf main.old
+  799  vim main.tf 
+  800  terraform state mv docker_container.simplegoservice docker_container.batman_api
+  801  terraform plan
+  802  terraform state list 
+  803  vi main.tf 
+  804  terraform state mv docker_image.simplegoservice docker_image.batmanservice
+  805  terraform state list 
+  806  vi main.tf 
+  807  vi output.tf 
+  808  terraform init 
+  809  terraform state list 
+  810  terraform state mv module.my_container.docker_container.nginx module.batcave.docker_container.nginx
+  811  terraform state mv module.my_container.docker_image.nginx module.batcave.docker_image.nginx
+  812  terraform state list 
+  813  terraform apply 
+  814  vim main.tf 
+  815  terraform apply 
+  816  vim terraform.tfstate.1721166572.backup
+  817  ls
+  818  rm -rf terraform.tfstate
+  819  ls
+  820  cp terraform.tfstate.1721166572.backup terraform.tfstate
+  821  terraform apply 
+  822  terraform state list 
+  823  terraform state mv module.my_container.docker_image.nginx module.batcave.docker_image.nginx
+  824  terraform apply 
+  825  ls 
+  826  cd ..
+  827  git status
+  828  git add . 
+  829  git status
+  830  git state-move/
+  831  cd state-move/
+  832  ls
+  833  ll -a
+  834  rm -rf .git
+  835  cd ..
+  836  git status
+  837  git commit -m "eod day2" 
+  838  git push
+  839  history >> day2_commands.log 
+  840  history 
+  841  git clone https://github.com/rzfeeser/basic_terraform_module ./day3-warmup
+  842  cd day3-warmup/
+  843  mkdir -p ~/day3-warmup/my_modules/thedudeabides
+  844  cd ../..
+  845  ls
+  846  rm -rf day3-warmup/
+  847  cd mycode/day3-warmup/
+  848  mkdir my_modules/thedudeabides
+  849  cd my_modules/thedudeabides/
+  850  vim main.tf
+  851  cd ../..
+  852  vim main.tf 
+  853  terraform init
+  854  terraform apply 
+  855  cd ..
+  856  grep -Ril 'simple_service'
+  857  cd state-move/
+  858  terraform destroy
+  859  cd ..
+  860  grep -Ril 'tutorial'
+  861  cd demo3/
+  862  terraform destroy
+  863  cd ..
+  864  cd day3-warmup/
+  865  terraform apply 
+  866  vi main.tf 
+  867  vi my_modules/container_maker/main.tf 
+  868  vi my_modules/container_maker/variables.tf 
+  869  vi my_modules/container_maker/outputs.tf 
+  870  terraform state list 
+  871  vi my_modules/thedudeabides/main.tf 
+  872  terraform destroy
+  873  cd ..
+  874  history >> day3_commands_morning.log
